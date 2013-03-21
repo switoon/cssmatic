@@ -1,6 +1,7 @@
 HOW TO INSTALL CSSMATIC
 =======================
 
+Dude.
 Run install.sh
 
 
