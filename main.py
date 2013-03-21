@@ -113,7 +113,15 @@ page_plugins = [
         '/img/img-04.png',
         lazy_gettext(
             u"""<p>Blur radius changes, color changes, shadow size…  Everything that you need
-            to create great drop shadows in a single place.</p>"""))
+            to create great drop shadows in a single place.</p>""")),
+    PagePlugin(
+        'text',
+        '/text-properties',
+        lazy_gettext(u'Text properties'),
+        '/img/img-05.png',
+        lazy_gettext(
+            u"""<p>You need to create some beautiful typographical work? No worries, we got you
+            covered!</p>"""))
 ]
 
 
