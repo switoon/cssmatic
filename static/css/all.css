@@ -1322,4 +1322,17 @@ text-shadow:0 1px 0 rgba(255,255,255,0.8);
 color:#1f568c;
 }
 
+#textExample{
+font-size: 60px;
+text-transform: none;
+}
+
+#text-properties-code {
+top: 250px;
+}
+
+#text-properties-object #copy-text-input{
+top: 150px;
+}
+
 

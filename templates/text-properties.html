@@ -2,7 +2,7 @@
 
 {% block js %}
   {{ super() }}
-  {# TODO: Add any specific js here... #}
+  <script src='{{ "/js/textProperties.js"|static_v }}'></script>
 {% endblock %}
 
 {% block innerbody %}
@@ -13,102 +13,47 @@
                 <div class="frame">
                     <div class="setting-block">
                         <div class="row">
-                            <label for="all-corners">{% trans %}TEXT TEXT TEXT{% endtrans %}</label>
-                            <label class="align-right" for="all-corners">px</label>
-                            <div class="text-1">
-                                <input id="all-corners" type="text" value="10" />
-                            </div>
-                        </div>
-                        <div id="slider-all-corners" class="slider-bar large"></div>
-                    </div>
-                    <div class="setting-block">
-                        <div class="row">
-                            <label for="top-left">{% trans %}Top Left{% endtrans %}</label>
-                            <label class="align-right" for="top-left">px</label>
-                            <div class="text-1">
-                                <input id="top-left" type="text" value="10" />
-                            </div>
-                        </div>
-                        <div id="slider-top-left" class="slider-bar large"></div>
-                        <div class="row mtop15">
-                            <label for="top-right">{% trans %}Top Right{% endtrans %}</label>
-                            <label class="align-right" for="top-right">px</label>
-                            <div class="text-1">
-                                <input id="top-right" type="text" value="10" />
-                            </div>
-                        </div>
-                        <div id="slider-top-right" class="slider-bar large"></div>
-                        <div class="row mtop15">
-                            <label for="bottom-left">{% trans %}Bottom Left{% endtrans %}</label>
-                            <label class="align-right" for="bottom-left">px</label>
-                            <div class="text-1">
-                                <input id="bottom-left" type="text" value="10" />
-                            </div>
-                        </div>
-                        <div id="slider-bottom-left" class="slider-bar large"></div>
-                        <div class="row mtop15" >
-                            <label for="bottom-right">{% trans %}Bottom Right{% endtrans %}</label>
-                            <label class="align-right" for="bottom-right">px</label>
-                            <div class="text-1">
-                                <input id="bottom-right" type="text" value="10" />
-                            </div>
-                        </div>
-                        <div id="slider-bottom-right" class="slider-bar large"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="holder">
-                <div class="frame">
-                    <div class="setting-block">
-                        <div class="row">
-                            <label for="border-width">{% trans %}Border Width{% endtrans %}</label>
-                            <label class="align-right" for="border-width">px</label>
-                            <div class="text-1">
-                                <input id="border-width" type="text" value="0" />
-                            </div>
-                        </div>
-                        <div id="slider-border-width" class="slider-bar large"></div>
-                    </div>
-                    <div class="setting-block">
-                        <div class="row">
-                            <label for="vertical-length">{% trans %}Border Style{% endtrans %}</label>
-                            <div class="text-1">
-                                <select id="select-border">
-                                    <option value="solid">{% trans %}solid{% endtrans %}</option>
-                                    <option value="dotted">{% trans %}dotted{% endtrans %}</option>
-                                    <option value="dashed">{% trans %}dashed{% endtrans %}</option>
-                                    <option value="double">{% trans %}double{% endtrans %}</option>
-                                    <option value="groove">{% trans %}groove{% endtrans %}</option>
-                                    <option value="ridge">{% trans %}ridge{% endtrans %}</option>
-                                    <option value="inset">{% trans %}inset{% endtrans %}</option>
-                                    <option value="outset">{% trans %}outset{% endtrans %}</option>
-                                    <option value="inherit">{% trans %}inherit{% endtrans %}</option>
-                                    <option value="hidden">{% trans %}hidden{% endtrans %}</option>
-                                    <option value="none">{% trans %}none{% endtrans %}</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label for="br-color">{% trans %}Border Color{% endtrans %}</label>
+                            <label for="text-value">{% trans %}Insert text{% endtrans %}</label>
                             <div class="text-2">
-                                <input id="br-color" type="text" value="#000000" />
+                                <input  type="text" id="text-value" placeholder="{% trans %}Insert Text{% endtrans %}" /> 
                             </div>
-                            <a id="br-color-button" class="btn-color color-3" href="javascript:;">
+                        </div>
+                        <div class="row">
+                            <label for="tp-background-color">{% trans %}Text Color{% endtrans %}</label>
+                            <div class="text-2">
+                                <input id="tp-background-color" type="text" value="#e7a61a" />
+                            </div>
+                            <a id="tp-background-color-button" class="btn-color color-4" href="javascript:;">
+                                <span>color</span>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <label for="font-size">{% trans %}Font size{% endtrans %}</label>
+                            <label class="align-right" for="font-size">px</label>
+                            <div class="text-1">
+                                <input id="font-size" type="text" value="60" />
+                            </div>
+                        </div>
+                        <div id="slider-font-size" class="slider-bar large"></div>                    
+                    </div>
+                    <div class="setting-block">
+                        <div class="row">
+                            <label for="tp-color">{% trans %}Stroke Color{% endtrans %}</label>
+                            <div class="text-2">
+                                <input id="tp-color" type="text" value="#000000" />
+                            </div>
+                            <a id="tp-color-button" class="btn-color color-3" href="javascript:;">
                                 <span>{% trans %}color{% endtrans %}</span>
                             </a>
                         </div>
                         <div class="row">
-                            <label for="br-background-color">{% trans %}Background Color{% endtrans %}</label>
-                            <div class="text-2">
-                                <input id="br-background-color" type="text" value="#e7a61a" />
+                            <label for="stroke-width">{% trans %}Stroke width{% endtrans %}</label>
+                            <label class="align-right" for="all-corners">px</label>
+                            <div class="text-1">
+                                <input id="stroke-width" type="text" value="0" />
                             </div>
-                            <a id="br-background-color-button" class="btn-color color-4" href="javascript:;">
-                                <span>color</span>
-                            </a>
                         </div>
+                        <div id="slider-stroke-width" class="slider-bar large"></div>
                     </div>
                 </div>
             </div>
@@ -117,10 +62,11 @@
 
     <div class="right-column">
         <div class="box-wrap">
-            <div id="border-radius-code" class="content"></div>
+            <div id="text-properties-code" class="content"></div>
 
             <div id="border-radius-panel">
-                <div id="border-radius-object"><a id="copy-text-input" class="btn-link-1" href="javascript:;">{% trans %}Copy Text{% endtrans %}</a></div>
+                <h1 id="textExample">Loren Ipsum</h1>
+                <div id="text-properties-object"><a id="copy-text-input" class="btn-link-1" href="javascript:;">{% trans %}Copy Text{% endtrans %}</a></div>
             </div>
         </div>
     </div>
