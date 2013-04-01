@@ -2,7 +2,11 @@
 
 {% block js %}
   {{ super() }}
-  <script src='{{ "/js/textProperties.js"|static_v }}'></script>
+    <script src='{{ "/js/textProperties.js"|static_v }}'></script>
+{% endblock %}
+
+{% block style %}
+    <style id='style'></style>
 {% endblock %}
 
 {% block innerbody %}
@@ -55,16 +59,51 @@
                         </div>
                         <div id="slider-stroke-width" class="slider-bar large"></div>
                     </div>
+                    <div class="setting-block">
+                        <div class="row">
+                            <label for="tp-shadow-color">{% trans %}Text shadow color{% endtrans %}</label>
+                            <div class="text-2">
+                                <input id="tp-shadow-color" type="text" value="#000" />
+                            </div>
+                            <a id="tp-shadow-color-button" class="btn-color color-3" href="javascript:;">
+                                <span>{% trans %}Shadow color{% endtrans %}</span>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <label for="vertical-shadow">{% trans %}Vertical length{% endtrans %}</label>
+                            <label class="align-right" for="vertical-shadow">px</label>
+                            <div class="text-1">
+                                <input id="vertical-shadow" type="text" value="0" />
+                            </div>
+                        </div>
+                        <div id="slider-vertical-shadow" class="slider-bar large"></div></br>
+                        <div class="row">
+                            <label for="horizontal-shadow">{% trans %}Horizontal length{% endtrans %}</label>
+                            <label class="align-right" for="horizontal-shadow">px</label>
+                            <div class="text-1">
+                                <input id="horizontal-shadow" type="text" value="0" />
+                            </div>
+                        </div>
+                        <div id="slider-horizontal-shadow" class="slider-bar large"></div></br>
+                        <div class="row">
+                            <label for="blur-shadow">{% trans %}Blur{% endtrans %}</label>
+                            <label class="align-right" for="blur-shadow">px</label>
+                            <div class="text-1">
+                                <input id="blur-shadow" type="text" value="0" />
+                            </div>
+                        </div>
+                        <div id="slider-blur-shadow" class="slider-bar large"></div></br>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="right-column">
-        <div class="box-wrap">
+        <div class="box-wrap text">
             <div id="text-properties-code" class="content"></div>
 
-            <div id="border-radius-panel">
+            <div id="text-properties-panel">
                 <h1 id="textExample">Loren Ipsum</h1>
                 <div id="text-properties-object"><a id="copy-text-input" class="btn-link-1" href="javascript:;">{% trans %}Copy Text{% endtrans %}</a></div>
             </div>
