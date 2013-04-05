@@ -136,8 +136,8 @@ page_plugins = [
         lazy_gettext(u'Speech bubbles'),
         '/img/img-07.png',
         lazy_gettext(
-            u"""<p>Need some fancy for your website?. Create amazing animations 
-            easily and fun.</p>"""))
+            u"""<p>Create your own speech bubbles for your website. Your characters should 
+            say what they think.</p>"""))
 ]
 
 
