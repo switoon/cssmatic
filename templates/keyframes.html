@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block js %}
+  {{ super() }}
+  <script src='{{ "/js/keyframes.js"|static_v }}'></script>
+{% endblock %}
+
+{% block innerbody %}
+<div class="keyframes-block">
+    <div class="left-column">
+        <div class="holder">
+            <div class="frame">
+            <div class="setting-block" id="keyframes-viewer">
+                <div class="row">
+                   <label for="position">{% trans %}Timeline - Keyframes{% endtrans %}</label>
+                    <div class="text-1">
+                        <input id="position" type="text" value="0"/>
+                    </div> 
+                </div>
+                <div id="position-markers"></div>
+            </div>
+            <div class="setting-block">
+                <label for="position">{% trans %}Select element to animate{% endtrans %}</label>
+            </div>
+            <div id="radio" class="row">
+                    <input type="radio" id="text" name="element" checked="checked" value="<h3>Lorem Ipsum</h3>">
+                    <label for="text">{% trans %}Text{% endtrans %}</label>
+                    <input type="radio" id="img" name="element" value="<img src='/img/animatedImg.jpg' alt='{% trans %}Animated image{% endtrans %}'>">
+                    <label for="img">{% trans %}Image{% endtrans %}</label>
+                    <input type="radio" id="dom" name="element" value="<div id='ElementDiv'></div>">
+                    <label for="dom">{% trans %}Other{% endtrans %}</label>
+                </div>
+            </div>
+            <div class="setting-block">
+                <div class="row">
+                   <label for="name">{% trans %}Animation name{% endtrans %}</label>
+                    <div class="text-2">
+                        <input id="animationName" type="text" value="" placeholder="Animation name"/>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-column">
+        <div class="preview-block">
+            <div id="keyframes-preview" class="preview-box gradient-background"></div>
+        </div>
+        <div class="box">
+            <div class="holder">
+                <div class="frame">
+                    <form action="#">
+                        <div class="block">
+                            <div class="scroll-container">
+                                <div id="css-code-content" class="holder">
+                                    <pre id="cssCode"></pre>
+                                </div>
+                            </div>
+                            <a href="javascript:;" id="copy-text-input" class="btn-link-1">Copy text</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="clear:both"></div>
+{% endblock %}

@@ -20,50 +20,89 @@ TextProperties.prototype.refresh = function () {
     shadowText = '';
     shadow = false;
     i=0;
-    if (this.vShadow != 0 || this.hShadow !=0 || this.bShadow !=0){
-        shadowText = this.hShadow+'px '+this.vShadow+'px '+this.bShadow+'px '+this.cShadow;
-        shadow = true;
+    if (css){
+        $('#shadowColorRow').show();
+        $('#copy-text-input').removeClass('svgCopyButton');
+        $('#svgCanvas').hide();
+        $('#textExample').show();
+        if (this.vShadow != 0 || this.hShadow !=0 || this.bShadow !=0){
+            shadowText = this.hShadow+'px '+this.vShadow+'px '+this.bShadow+'px '+this.cShadow;
+            shadow = true;
+        } else {
+            shadow = false;
+        }
+        while (i<this.strokeWidth){
+            i++;
+            if (i == this.strokeWidth){
+                ffstrokeText += i+'px '+i+'px '+this.strokeColor+', -'+i+'px -'+i+'px '+this.strokeColor+', -'+i+'px '+i+'px '+this.strokeColor+', '+i+'px -'+i+'px '+this.strokeColor;
+            } else {
+                ffstrokeText += i+'px '+i+'px '+this.strokeColor+', -'+i+'px -'+i+'px '+this.strokeColor+', -'+i+'px '+i+'px '+this.strokeColor+', '+i+'px -'+i+'px '+this.strokeColor+', ';           
+            }
+        }
+
+        this.htmlElement.css('font-size', this.fontSize);
+        this.htmlElement.css('color', this.fillColor);
+        this.htmlElement.css('-webkit-text-stroke-width', this.strokeWidth);
+        this.htmlElement.css('-webkit-text-stroke-color', this.strokeColor);
+        this.htmlElement.css('-webkit-text-fill-color', this.fillColor);
+        this.htmlCode.html('');
+
+        var text = '<div>font-size: ' + fontSizeText +';</div>';
+        text += '<div>color: ' + fillColorText +';</div>';
+        if (this.strokeWidth != 0 || shadow == true){
+            if (this.strokeWidth != 0 && shadow == true){
+                text += '<div>text-shadow: ' +ffstrokeText+', '+shadowText +';</div>';
+                text += '<div>-webkit-text-stroke-width: ' + strokeWidthText +';</div>';
+                text += '<div>-webkit-text-stroke-color: ' + strokeColorText +';</div>';
+                text += '<div>-webkit-text-fill-color: ' + fillColorText +';</div>';
+                this.htmlElement.css('text-shadow', ffstrokeText+', '+shadowText);
+            } else if (this.strokeWidth == 0 && shadow == true){
+                text += '<div>text-shadow: ' +shadowText +';</div>';
+                this.htmlElement.css('text-shadow', shadowText);
+            } else {
+                this.htmlElement.css('text-shadow', ffstrokeText);
+                text += '<div>text-shadow: ' +ffstrokeText+';</div>';
+                text += '<div>-webkit-text-stroke-width: ' + strokeWidthText +';</div>';
+                text += '<div>-webkit-text-stroke-color: ' + strokeColorText +';</div>';
+                text += '<div>-webkit-text-fill-color: ' + fillColorText +';</div>';
+            }        
+        }    
+        this.htmlCode.html(text);
     } else {
-        shadow = false;
-    }
-    while (i<this.strokeWidth){
-        i++;
-        if (i == this.strokeWidth){
-            ffstrokeText += i+'px '+i+'px '+this.strokeColor+', -'+i+'px -'+i+'px '+this.strokeColor+', -'+i+'px '+i+'px '+this.strokeColor+', '+i+'px -'+i+'px '+this.strokeColor;
+        $('#shadowColorRow').hide();
+        if ($('#text-value').val() == ""){
+            textoSVG = "Lorem Ipsum";
         } else {
-            ffstrokeText += i+'px '+i+'px '+this.strokeColor+', -'+i+'px -'+i+'px '+this.strokeColor+', -'+i+'px '+i+'px '+this.strokeColor+', '+i+'px -'+i+'px '+this.strokeColor+', ';           
+            textoSVG = $('#text-value').val();
         }
+        $('#svgCanvas').svg('destroy').svg();
+        var svg =  $('#svgCanvas').svg('get');
+        $('#svgCanvas').css("width", "600px").css("height", "600px").css("position", "relative").css("top", "-50px");
+
+        var filter = svg.filter(svg.root(), 'filter', -50, -50, 1000, 1000,  
+        {filterUnits: 'userSpaceOnUse'});
+        svg.filters.gaussianBlur(filter, 'blur', 'SourceAlpha', this.bShadow);
+        svg.filters.offset(filter, 'offsetBlur', 'blur', this.hShadow, this.vShadow);
+        svg.filters.merge(filter, 'filtros', ['offsetBlur', 'SourceGraphic']);
+        var g = svg.group(
+            {   'fontFamily': 'Helvetica',
+                'fontSize': this.fontSize, 
+                'fill': this.fillColor, 
+                'stroke': this.strokeColor,
+                'stroke-width': this.strokeWidth,
+                'filter': 'url(#filter)'
+            }
+        );
+        svg.text(g, 0, this.fontSize, textoSVG);
+
+        $('#copy-text-input').addClass('svgCopyButton');
+        $('#textExample').hide();
+        $('#svgCanvas').show();
+        code = $('#svgCanvas').html();
+        this.htmlCode.html("<div></div>");
+        $('#text-properties-code > div').last().text(code);
     }
-
-    this.htmlElement.css('font-size', this.fontSize);
-    this.htmlElement.css('color', this.fillColor);
-    this.htmlElement.css('-webkit-text-stroke-width', this.strokeWidth);
-    this.htmlElement.css('-webkit-text-stroke-color', this.strokeColor);
-    this.htmlElement.css('-webkit-text-fill-color', this.fillColor);
-
-    this.htmlCode.html('');
-    var text = '<div>font-size: ' + fontSizeText +';</div>';
-    text += '<div>color: ' + fillColorText +';</div>';
-    if (this.strokeWidth != 0 || shadow == true){
-        if (this.strokeWidth != 0 && shadow == true){
-            text += '<div>text-shadow: ' +ffstrokeText+', '+shadowText +';</div>';
-            text += '<div>-webkit-text-stroke-width: ' + strokeWidthText +';</div>';
-            text += '<div>-webkit-text-stroke-color: ' + strokeColorText +';</div>';
-            text += '<div>-webkit-text-fill-color: ' + fillColorText +';</div>';
-            this.htmlElement.css('text-shadow', ffstrokeText+', '+shadowText);
-        } else if (this.strokeWidth == 0 && shadow == true){
-            text += '<div>text-shadow: ' +shadowText +';</div>';
-            this.htmlElement.css('text-shadow', shadowText);
-        } else {
-            this.htmlElement.css('text-shadow', ffstrokeText);
-            text += '<div>text-shadow: ' +ffstrokeText+';</div>';
-            text += '<div>-webkit-text-stroke-width: ' + strokeWidthText +';</div>';
-            text += '<div>-webkit-text-stroke-color: ' + strokeColorText +';</div>';
-            text += '<div>-webkit-text-fill-color: ' + fillColorText +';</div>';
-        }
-        
-    }    
-    this.htmlCode.append(text);
+    
 };
 
 TextProperties.prototype.fontSize = function (fontSize) {
@@ -94,12 +133,12 @@ function _getFromField(value, min, max, elem) {
     } else if (val > max) {
         val = max;
     }
-
     if (elem)
         elem.val(val);
-
     return val;
 }
+
+var css = true;
 
 $('body').ready(function() {
     textProperties = new TextProperties(_getAllValuesFromPanelBorderRadius());
@@ -109,8 +148,9 @@ $('body').ready(function() {
 
     /* Text Edit */
     $('#text-value').keyup(function(){
-        text = $(this).val();
-        $('#textExample').html(text);
+        texto = $(this).val();
+        $('#textExample').html(texto);
+        textProperties.refresh();
     });
     $('#font-size').live('keyup', function() {
         var val = _getFromField($(this).val(), 20, 100, $('#font-size'));
@@ -173,7 +213,7 @@ $('body').ready(function() {
         $('#slider-horizontal-shadow').slider('value', val);
     });
     $('#blur-shadow').live('keyup', function() {
-        var val = _getFromField($(this).val(), 0, 50, $('#blur-shadow'));
+        var val = _getFromField($(this).val(), 0, 30, $('#blur-shadow'));
         textProperties.bShadow = val;
         textProperties.refresh();
 
@@ -208,10 +248,10 @@ $('body').ready(function() {
     $('#slider-blur-shadow').slider({
         value: 0,
         min: 0,
-        max: 50,
+        max: 30,
         step: 1,
         slide: function(event, ui) {
-            var val = _getFromField(ui.value, 0, 50);
+            var val = _getFromField(ui.value, 0, 30);
             textProperties.bShadow = val;
             textProperties.refresh();
 
@@ -314,5 +354,16 @@ $('body').ready(function() {
     })
     .bind('keyup', function(){
         $(this).ColorPickerSetColor(this.value);
+    });
+    //SVG Funtions 
+    
+    $('#svgButton').toggle(function() {
+          $(this).text("CSS");
+          css = false;
+          textProperties.refresh();
+        }, function() {
+          $(this).text("SVG");
+          css = true;
+          textProperties.refresh();
     });
 });

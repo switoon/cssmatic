@@ -3,10 +3,12 @@
 {% block js %}
   {{ super() }}
     <script src='{{ "/js/textProperties.js"|static_v }}'></script>
+    <script src='{{ "/js/jquery.svg.js"|static_v }}'></script>
+    <script src='{{ "/js/jquery.svgfilter.js"|static_v }}'></script>
 {% endblock %}
 
 {% block style %}
-    <style id='style'></style>
+    <link rel="stylesheet" type="text/css" href="/css/jquery.svg.css">
 {% endblock %}
 
 {% block innerbody %}
@@ -60,7 +62,7 @@
                         <div id="slider-stroke-width" class="slider-bar large"></div>
                     </div>
                     <div class="setting-block">
-                        <div class="row">
+                        <div class="row" id='shadowColorRow'>
                             <label for="tp-shadow-color">{% trans %}Text shadow color{% endtrans %}</label>
                             <div class="text-2">
                                 <input id="tp-shadow-color" type="text" value="#000" />
@@ -94,6 +96,11 @@
                         </div>
                         <div id="slider-blur-shadow" class="slider-bar large"></div></br>
                     </div>
+                    <div class="setting-block">
+                        <div class="row">
+                            <button id='svgButton'>SVG</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,7 +111,8 @@
             <div id="text-properties-code" class="content"></div>
 
             <div id="text-properties-panel">
-                <h1 id="textExample">Loren Ipsum</h1>
+                <h1 id="textExample">Lorem Ipsum</h1>
+                <div id='svgCanvas'></div>
                 <div id="text-properties-object"><a id="copy-text-input" class="btn-link-1" href="javascript:;">{% trans %}Copy Text{% endtrans %}</a></div>
             </div>
         </div>

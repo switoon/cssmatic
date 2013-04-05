@@ -42,6 +42,7 @@ padding-top:80px;
 }
 #wrapper.detail {
 padding-top:40px;
+
 }
 
 #header {padding:80px 10px 72px;}
@@ -78,21 +79,21 @@ padding-top:40px;
 	left:59px;
 }
 #main {width:100%;}
-.gradient-block {
+.gradient-block, .keyframes-block {
 	overflow:hidden;
 	margin:0 0px 128px 0;
 }
-.gradient-block .left-column {
+.gradient-block .left-column, .keyframes-block .left-column {
 	background:#fff url(../img/bg-left-column.gif) no-repeat;
 	width:600px;
 	float:left;
 }
-.gradient-block .left-column>.holder {
+.gradient-block .left-column>.holder, .keyframes-block .left-column>.holder {
 	background:url(../img/bg-left-column.gif) no-repeat -600px 100%;
 	padding:16px 25px 20px;
 	overflow:hidden;
 }
-.gradient-block .caption {
+.gradient-block .caption, .keyframes-block .caption {
 	display:block;
 	margin:0 0 17px;
 	text-align:center;
@@ -101,12 +102,12 @@ padding-top:40px;
 	font-weight:normal;
 	text-transform:uppercase;
 }
-.gradient-block .left-column .scroll-container {
+.gradient-block .left-column .scroll-container, .keyframes-block .left-column .scroll-container {
 	background:url(../img/separator.gif) repeat-x 0 100%;
 	padding:0 0 21px;
 	margin:0 0 30px;
 }
-.gradient-block .left-column .scroll-container>.holder {
+.gradient-block .left-column .scroll-container>.holder, .keyframes-block .left-column .scroll-container>.holder {
 	height:128px;
 	padding:0 8px 0 0;
 	overflow:auto;
@@ -316,28 +317,28 @@ box-shadow:0 1px 1px rgba(0,0,0,0.1);
 	line-height:36px;
 	text-align:center;
 }
-.gradient-block .left-column .box {
+.gradient-block .left-column .box, .keyframes-block .left-column .box {
 	width:548px;
 	border:solid #ececec;
 	border-width:0 1px;
 	margin:0 0 20px;
 }
-.gradient-block .left-column .box .holder {
+.gradient-block .left-column .box .holder, .keyframes-block .left-column .box .holder {
 	background:url(../img/bg-box.gif) no-repeat;
 	margin:0 -1px;
 }
-.gradient-block .left-column .box .frame {
+.gradient-block .left-column .box .frame, .keyframes-block .left-column .box .frame {
 	background:url(../img/bg-box.gif) no-repeat -550px 100%;
 	padding:19px 30px 0;
 	overflow:hidden;
 }
-.gradient-block .left-column .box .col {
+.gradient-block .left-column .box .col, .keyframes-block .left-column .box .col {
 	width:200px;
 	float:right;
 }
-.gradient-block .left-column .box .col:first-child {float:left;}
-.gradient-block .left-column .box .setting-block {padding:1px 0 23px;}
-.gradient-block .left-column .box .btn-link-1 {margin:9px 0 0;}
+.gradient-block .left-column .box .col:first-child, .keyframes-block .left-column .box .col:first-child {float:left;}
+.gradient-block .left-column .box .setting-block, .keyframes-block .left-column .box .setting-block {padding:1px 0 23px;}
+.gradient-block .left-column .box .btn-link-1, .keyframes-block.left-column .box .btn-link-1  {margin:9px 0 0;}
 .save-block {
 	background:url(../img/sprite.png) no-repeat 0 -463px;
 	height:37px;
@@ -363,12 +364,12 @@ box-shadow:0 1px 1px rgba(0,0,0,0.1);
 	line-height:17px;
 	color:#626262;
 }
-.gradient-block .right-column {
+.gradient-block .right-column, .keyframes-block .right-column {
 	width:340px;
 	float:right;
 	position:relative;
 }
-.gradient-block .preview-block {
+.gradient-block .preview-block, .keyframes-block .preview-block  {
 	overflow:hidden;
 	padding:0 0 17px;
 }
@@ -378,7 +379,13 @@ box-shadow:0 1px 1px rgba(0,0,0,0.1);
 	height:240px;
 	position:relative;
 }
-.gradient-block .preview-box span {
+.keyframes-block .preview-box {
+	float:left;
+	width:100%;
+	height:240px;
+	position:relative;
+}
+.gradient-block .preview-box span, .keyframes-block .preview-box span {
 	background:url(../img/bg-preview-box.png) no-repeat;
 	width:100%;
 	height:100%;
@@ -386,7 +393,8 @@ box-shadow:0 1px 1px rgba(0,0,0,0.1);
 	left:0;
 	top:0;
 }
-.gradient-block .preview-box img {display:block;}
+.gradient-block .preview-box img {display:block;},
+.keyframes-block .preview-box img {display:block;}
 .btn-horizontal,
 .btn-vertical,
 .btn-diagonal-1,
@@ -404,16 +412,16 @@ box-shadow:0 1px 1px rgba(0,0,0,0.1);
 .btn-diagonal-1 {background-position:-259px -164px;}
 .btn-diagonal-2 {background-position:-259px -214px;}
 .btn-radial {background-position:-259px -264px;}
-.gradient-block .right-column .box {
+.gradient-block .right-column .box, .keyframes-block .right-column .box {
 	background:#fff;
 	border:solid #d1d1d1;
 	border-width:0 1px;
 }
-.gradient-block .right-column .box>.holder {
+.gradient-block .right-column .box>.holder, .keyframes-block .right-column .box>.holder {
 	background:url(../img/bg-box-2.gif) no-repeat;
 	margin:0 -1px;
 }
-.gradient-block .right-column .box>.holder>.frame {
+.gradient-block .right-column .box>.holder>.frame, .keyframes-block .right-column .box>.holder>.frame {
 	background:url(../img/bg-box-2.gif) no-repeat -340px 100%;
 	overflow:hidden;
 	padding:16px 15px 20px;
@@ -423,7 +431,7 @@ box-shadow:0 1px 1px rgba(0,0,0,0.1);
 	padding:0 46px 4px 40px;
 	line-height:18px;
 }
-.gradient-block .option-panel {
+.gradient-block .option-panel, .keyframes-block .option-panel {
 	padding:0 59px 17px;
 	font-size:16px;
 	line-height:19px;
@@ -468,12 +476,12 @@ box-shadow:0 1px 1px rgba(0,0,0,0.1);
 .slider-block .knob.right-pos {right:0;}
 .slider-block.marked .knob.left-pos {background:url(../img/sprite-knobs.png) no-repeat 0 -114px;}
 .slider-block.marked .knob.right-pos {background:url(../img/sprite-knobs.png) no-repeat -44px -114px;}
-.gradient-block .right-column .block {
+.gradient-block .right-column .block, .keyframes-block .right-column .block  {
 	background:url(../img/separator.gif) repeat-x 0 100%;
 	padding:0 0 3px;
 	margin:0 0 14px;
 }
-.gradient-block .right-column .scroll-container {
+.gradient-block .right-column .scroll-container, .keyframes-block .right-column .scroll-container  {
 	height:340px;
 	overflow:auto;
 	margin:0 0px 0 0;
@@ -488,13 +496,15 @@ box-shadow:0 1px 1px rgba(0,0,0,0.1);
 	padding:10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
 }
-.gradient-block .right-column .scroll-container .holder {
+.gradient-block .right-column .scroll-container .holder,
+.keyframes-block .right-column .scroll-container .holder {
 	background:url(../img/bg-scroll-container.gif);
 	padding:0 0 0 11px;
 	margin:0 0px 0 0;
 	overflow:hidden;
 }
-.gradient-block .right-column .scroll-container p {
+.gradient-block .right-column .scroll-container p,
+.keyframes-block .right-column .scroll-container p {
 	float:left;
 	width:100%;
 	margin:-1px 0 1px;
@@ -1315,8 +1325,8 @@ text-shadow:0 1px 0 rgba(255,255,255,0.8);
 #collaborate .contact:hover{
 color:#1f568c;
 }
-
-#textExample{
+/*Text properties*/
+#textExample, #svgCanvas{
 margin-left: -85px;
 text-transform: none;
 width: 560px;
@@ -1336,5 +1346,108 @@ margin: 77px auto 0;
 position: relative;
 width: 500px;
 }
+
+#svgButton{
+padding: 10px 40px;
+background: white;
+border: 1px solid grey;
+border-radius: 4px;
+color: grey;
+}
+#svgButton:hover{
+padding: 10px 40px;
+background: white;
+border: 1px solid grey;
+border-radius: 4px;
+color: grey;
+box-shadow: -2px -2px 2px grey inset;
+}
+#svgButton:active{
+background: #F1F1F1;
+padding: 10px 40px;
+border: 1px solid grey;
+border-radius: 4px;
+color: grey;
+box-shadow: -1px -1px 1px grey inset;
+}
+
+.svgCopyButton{
+top: -500px !important;
+}
+#svgCanvas{
+position: relative;
+top: -50px;
+}
+/*Spech Bubbles*/
+#speech-bubble-panel {
+position: relative;
+}
+#spike{
+position: absolute;
+width: 0; 
+height: 0; 
+border-style: solid;
+display: block;
+width: 0;
+z-index: 1;
+}
+#spikeBorder{
+position: absolute;
+width: 0; 
+height: 0; 
+border-left: 20px solid transparent;
+border-right: 20px solid transparent;
+border-top: 20px solid #f00;
+border-style: solid;
+display: block;
+width: 0;
+z-index: 1;
+}
+#speech-bubble-code{
+top: 200px;
+height: 200px;
+}
+#select-location{
+float: right;
+}
+/* Keyframes */
+.marker{
+	-moz-box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 3px 3px 3px 3px;
+    float: left;
+    height: 30px;
+    margin: -0.5px;
+    width: 2.15%;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: white;
+}
+.marker:hover{
+	background: gold !important;
+}
+.markerOn{
+	background: DeepSkyBlue !important;
+}
+.markerActive{
+	background: crimson !important;
+}
+#keyframes-preview{
+	background: white;
+	padding: 30px;
+}
+#keyframes-preview h3{
+	font-family: helvetica;
+	font-size: 40px;
+}
+#keyframes-preview div{
+	width: 80%;
+	height: 50%;
+	background: crimson;
+}
+#keyframes-preview img{
+	width: 80%;
+}
+
 
 

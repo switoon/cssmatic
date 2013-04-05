@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-03-11 10:39+0100\n"
+"POT-Creation-Date: 2013-04-05 09:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: main.py:85
+#: main.py:84
 msgid "Gradient Generator"
 msgstr ""
 
-#: main.py:87
+#: main.py:86
 msgid ""
 "<p>Use multiple colors and opacity stops to get amazing gradients.\n"
 "            By using the gradient tool you can create gradients with "
@@ -33,56 +33,87 @@ msgid ""
 "            tables and in many other applications.</p>"
 msgstr ""
 
-#: main.py:97
+#: main.py:96
 msgid "Border Radius"
 msgstr ""
 
-#: main.py:99
+#: main.py:98
 msgid ""
 "<p>Super easy to use and a super time saver. Change all the borders "
 "selected at\n"
 "            the same time.</p>"
 msgstr ""
 
-#: main.py:105
+#: main.py:104
 msgid "Noise Texture"
 msgstr ""
 
-#: main.py:107
+#: main.py:106
 msgid ""
 "<p>Create subtle background patterns with dirty pixels and noise, "
 "changing\n"
 "            the color and values and previewing the results in real time."
 msgstr ""
 
-#: main.py:113
+#: main.py:112
 msgid "Box Shadow"
 msgstr ""
 
-#: main.py:115
+#: main.py:114
 msgid ""
 "<p>Blur radius changes, color changes, shadow size…  Everything that you "
 "need\n"
 "            to create great drop shadows in a single place.</p>"
 msgstr ""
 
-#: main.py:227
+#: main.py:120
+msgid "Text properties"
+msgstr ""
+
+#: main.py:122
+msgid ""
+"<p>You need to create some beautiful typographical work? No worries, we "
+"got you\n"
+"            covered!</p>"
+msgstr ""
+
+#: main.py:128
+msgid "Keyframes"
+msgstr ""
+
+#: main.py:130
+msgid ""
+"<p>Need some fancy effects for your website?. Create amazing animations \n"
+"            easily and fun.</p>"
+msgstr ""
+
+#: main.py:136
+msgid "Speech bubbles"
+msgstr ""
+
+#: main.py:138
+msgid ""
+"<p>Need some fancy for your website?. Create amazing animations \n"
+"            easily and fun.</p>"
+msgstr ""
+
+#: main.py:251
 msgid "The name is empty"
 msgstr ""
 
-#: main.py:229
+#: main.py:253
 msgid "The family name is empty"
 msgstr ""
 
-#: main.py:231
+#: main.py:255
 msgid "The email is empty"
 msgstr ""
 
-#: main.py:233
+#: main.py:257
 msgid "The reason to contact is empty"
 msgstr ""
 
-#: main.py:235
+#: main.py:259
 msgid "The message is empty"
 msgstr ""
 
@@ -162,33 +193,33 @@ msgstr ""
 msgid "The ultimate CSS tools for web designers | CSSmatic"
 msgstr ""
 
-#: templates/base.html:73 templates/index.html:9
+#: templates/base.html:76 templates/index.html:9
 msgid "The ultimate <strong>CSS tools</strong> for web designers"
 msgstr ""
 
-#: templates/base.html:106 templates/index.html:25
+#: templates/base.html:109 templates/index.html:25
 msgid ""
 "<strong>CSSmatic</strong> is a non-profit project, made by developers for"
 " developers"
 msgstr ""
 
-#: templates/base.html:107
+#: templates/base.html:110
 msgid "Are you a web developer?  Would you like to collaborate on CSSMatic?"
 msgstr ""
 
-#: templates/base.html:110 templates/index.html:29
+#: templates/base.html:113 templates/index.html:29
 msgid "Contact us"
 msgstr ""
 
-#: templates/base.html:114
+#: templates/base.html:117
 msgid "Designed and developed by"
 msgstr ""
 
-#: templates/base.html:123
+#: templates/base.html:126
 msgid "About"
 msgstr ""
 
-#: templates/base.html:124
+#: templates/base.html:127
 msgid "Contact"
 msgstr ""
 
@@ -270,7 +301,7 @@ msgstr ""
 
 #: templates/border-radius.html:100 templates/box-shadow.html:61
 #: templates/box-shadow.html:73 templates/noise-texture.html:40
-#: templates/noise-texture.html:49
+#: templates/noise-texture.html:49 templates/text-properties.html:52
 msgid "color"
 msgstr ""
 
@@ -279,7 +310,7 @@ msgid "Background Color"
 msgstr ""
 
 #: templates/border-radius.html:123 templates/box-shadow.html:110
-#: templates/noise-texture.html:89
+#: templates/noise-texture.html:89 templates/text-properties.html:116
 msgid "Copy Text"
 msgstr ""
 
@@ -299,7 +330,7 @@ msgstr ""
 msgid "Spread Radius"
 msgstr ""
 
-#:templates/box-shadow.html:56
+#: templates/box-shadow.html:56
 msgid "Shadow Color"
 msgstr ""
 
@@ -385,7 +416,7 @@ msgstr ""
 msgid "A question about CSSmatic"
 msgstr ""
 
-#: templates/contact.html:89
+#: templates/contact.html:89 templates/keyframes.html:31
 msgid "Other"
 msgstr ""
 
@@ -418,6 +449,7 @@ msgid "Opacity"
 msgstr ""
 
 #: templates/gradient-generator.html:69 templates/gradient-generator.html:95
+#: templates/speech-bubble.html:16
 msgid "Location"
 msgstr ""
 
@@ -512,6 +544,30 @@ msgstr ""
 msgid "Are you a web developer? Would you like to collaborate on CSSMatic?"
 msgstr ""
 
+#: templates/keyframes.html:15
+msgid "Timeline - Keyframes"
+msgstr ""
+
+#: templates/keyframes.html:23
+msgid "Select element to animate"
+msgstr ""
+
+#: templates/keyframes.html:27
+msgid "Text"
+msgstr ""
+
+#: templates/keyframes.html:28
+msgid "Animated image"
+msgstr ""
+
+#: templates/keyframes.html:29
+msgid "Image"
+msgstr ""
+
+#: templates/keyframes.html:36
+msgid "Animation name"
+msgstr ""
+
 #: templates/noise-texture.html:16
 msgid "Noise Opacity"
 msgstr ""
@@ -532,15 +588,105 @@ msgstr ""
 msgid "Dimensions"
 msgstr ""
 
-#: templates/noise-texture.html:67
+#: templates/noise-texture.html:67 templates/speech-bubble.html:37
+#: templates/speech-bubble.html:61
 msgid "Width"
 msgstr ""
 
-#: templates/noise-texture.html:74
+#: templates/noise-texture.html:74 templates/speech-bubble.html:45
+#: templates/speech-bubble.html:70
 msgid "Height"
 msgstr ""
 
 #: templates/noise-texture.html:84
 msgid "Download Noise Texture"
+msgstr ""
+
+#: templates/speech-bubble.html:19
+msgid "Bottom"
+msgstr ""
+
+#: templates/speech-bubble.html:20
+msgid "Top"
+msgstr ""
+
+#: templates/speech-bubble.html:21
+msgid "Right"
+msgstr ""
+
+#: templates/speech-bubble.html:22
+msgid "Left"
+msgstr ""
+
+#: templates/speech-bubble.html:29
+msgid "Position"
+msgstr ""
+
+#: templates/speech-bubble.html:79
+msgid "Padding"
+msgstr ""
+
+#: templates/speech-bubble.html:87
+msgid "Radius"
+msgstr ""
+
+#: templates/speech-bubble.html:97
+msgid "Border"
+msgstr ""
+
+#: templates/speech-bubble.html:106
+msgid "Border color"
+msgstr ""
+
+#: templates/speech-bubble.html:115
+msgid "Background color"
+msgstr ""
+
+#: templates/speech-bubble.html:137
+msgid "Copy text"
+msgstr ""
+
+#: templates/text-properties.html:22
+msgid "Insert text"
+msgstr ""
+
+#: templates/text-properties.html:24
+msgid "Insert Text"
+msgstr ""
+
+#: templates/text-properties.html:28
+msgid "Text Color"
+msgstr ""
+
+#: templates/text-properties.html:37
+msgid "Font size"
+msgstr ""
+
+#: templates/text-properties.html:47
+msgid "Stroke Color"
+msgstr ""
+
+#: templates/text-properties.html:56
+msgid "Stroke width"
+msgstr ""
+
+#: templates/text-properties.html:66
+msgid "Text shadow color"
+msgstr ""
+
+#: templates/text-properties.html:71
+msgid "Shadow color"
+msgstr ""
+
+#: templates/text-properties.html:75
+msgid "Vertical position"
+msgstr ""
+
+#: templates/text-properties.html:83
+msgid "Horizontal position"
+msgstr ""
+
+#: templates/text-properties.html:91
+msgid "Blur"
 msgstr ""
 
