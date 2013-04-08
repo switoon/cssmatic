@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-04-05 09:41+0200\n"
+"POT-Creation-Date: 2013-04-05 12:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,8 +93,9 @@ msgstr ""
 
 #: main.py:138
 msgid ""
-"<p>Need some fancy for your website?. Create amazing animations \n"
-"            easily and fun.</p>"
+"<p>Create your own speech bubbles for your website. Your characters "
+"should \n"
+"            say what they think.</p>"
 msgstr ""
 
 #: main.py:251
@@ -449,7 +450,7 @@ msgid "Opacity"
 msgstr ""
 
 #: templates/gradient-generator.html:69 templates/gradient-generator.html:95
-#: templates/speech-bubble.html:16
+#: templates/speech-bubble.html:16 templates/speech-bubble.html:29
 msgid "Location"
 msgstr ""
 
@@ -616,10 +617,6 @@ msgstr ""
 
 #: templates/speech-bubble.html:22
 msgid "Left"
-msgstr ""
-
-#: templates/speech-bubble.html:29
-msgid "Position"
 msgstr ""
 
 #: templates/speech-bubble.html:79

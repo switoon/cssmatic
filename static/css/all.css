@@ -65,7 +65,10 @@ padding-top:40px;
 	margin:0 0 0 20px;
 	overflow:hidden;
 }
-#switcher li:first-child {margin:0;}
+#switcher li:first-child, #switcher li:nth-child(5n) {
+margin: 0;
+}
+
 #switcher a {
 	display:block;
 	height:61px;

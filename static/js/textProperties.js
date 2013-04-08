@@ -22,7 +22,7 @@ TextProperties.prototype.refresh = function () {
     i=0;
     if (css){
         $('#shadowColorRow').show();
-        $('#copy-text-input').removeClass('svgCopyButton');
+        $('#copy-text-input').hide().removeClass('svgCopyButton').show();
         $('#svgCanvas').hide();
         $('#textExample').show();
         if (this.vShadow != 0 || this.hShadow !=0 || this.bShadow !=0){
@@ -95,7 +95,7 @@ TextProperties.prototype.refresh = function () {
         );
         svg.text(g, 0, this.fontSize, textoSVG);
 
-        $('#copy-text-input').addClass('svgCopyButton');
+        $('#copy-text-input').hide().addClass('svgCopyButton').show();
         $('#textExample').hide();
         $('#svgCanvas').show();
         code = $('#svgCanvas').html();

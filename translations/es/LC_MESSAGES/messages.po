@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-04-05 09:41+0200\n"
+"POT-Creation-Date: 2013-04-05 12:11+0200\n"
 "PO-Revision-Date: 2013-03-03 17:27+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgstr ""
 "Al usar el editor de gradientes puedes crear gradientes con\n"
 "sutiles cambios de colores y transparencias.</p>\n"
 "\n"
-"<p>Las imágenes generadas pueden usarse como imágenes de fondo en "
+"<p>Las imágenes generadas pueden usarse como imágenes de fondo en \n"
 "carteles, fondos de pantalla, botones o\n"
 "incluso en tablas y en muchos otros elementos.</p>"
 
@@ -50,7 +50,8 @@ msgid ""
 "selected at\n"
 "            the same time.</p>"
 msgstr ""
-"<p>Super sencillo de usar y ahorra mucho tiempo. Cambia todos los bordes "
+"<p>Super sencillo de usar y ahorra mucho tiempo. Cambia todos los bordes"
+" \n"
 "seleccionados al mismo tiempo.</p>"
 
 #: main.py:104
@@ -63,7 +64,7 @@ msgid ""
 "changing\n"
 "            the color and values and previewing the results in real time."
 msgstr ""
-"<p>Crea sutiles fondos con algo de suciedad y de ruido, cambiando el "
+"<p>Crea sutiles fondos con algo de suciedad y de ruido, cambiando el \n"
 "color del fondo y de la suciedad, y viendo el resultado en tiempo real."
 
 #: main.py:112
@@ -76,12 +77,13 @@ msgid ""
 "need\n"
 "            to create great drop shadows in a single place.</p>"
 msgstr ""
-"<p>Cambia el radio de la sombra, el color, tamaño… Todo lo que necesitas "
+"<p>Cambia el radio de la sombra, el color, tamaño… Todo lo que necesitas"
+" \n"
 "para crear sombras en un solo lugar.</p>"
 
 #: main.py:120
 msgid "Text properties"
-msgstr ""
+msgstr "Propiedades texto"
 
 #: main.py:122
 msgid ""
@@ -89,26 +91,33 @@ msgid ""
 "got you\n"
 "            covered!</p>"
 msgstr ""
+"<p>¿Necesitas crear unos textos más sofisticados? No te preocupes, \n"
+"¡nosotros te ayudamos!</p>"
 
 #: main.py:128
 msgid "Keyframes"
-msgstr ""
+msgstr "Animaciones"
 
 #: main.py:130
 msgid ""
 "<p>Need some fancy effects for your website?. Create amazing animations \n"
 "            easily and fun.</p>"
 msgstr ""
+"<p>¿Quieres una web más dinámica y divertida?. Crea fantásticas \n"
+"animaciones de manera fácil y divertida.</p>"
 
 #: main.py:136
 msgid "Speech bubbles"
-msgstr ""
+msgstr "Diálogos"
 
 #: main.py:138
 msgid ""
-"<p>Need some fancy for your website?. Create amazing animations \n"
-"            easily and fun.</p>"
+"<p>Create your own speech bubbles for your website. Your characters "
+"should \n"
+"            say what they think.</p>"
 msgstr ""
+"<p>Crea tus propios bocadillos para tu sitio. Tus personajes \n"
+"tienen derecho a decir lo que piensan.</p>"
 
 #: main.py:251
 msgid "The name is empty"
@@ -496,7 +505,7 @@ msgid "Opacity"
 msgstr "Opacidad"
 
 #: templates/gradient-generator.html:69 templates/gradient-generator.html:95
-#: templates/speech-bubble.html:16
+#: templates/speech-bubble.html:16 templates/speech-bubble.html:29
 msgid "Location"
 msgstr "Posición"
 
@@ -667,10 +676,6 @@ msgstr "Derecha"
 #: templates/speech-bubble.html:22
 msgid "Left"
 msgstr "Izquierda"
-
-#: templates/speech-bubble.html:29
-msgid "Position"
-msgstr "Posición"
 
 #: templates/speech-bubble.html:79
 msgid "Padding"
