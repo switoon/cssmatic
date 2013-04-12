@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block js %}
+{{ super() }}
+<script src='{{ "/js/speechBubble.js"|static_v }}'></script>
+{% endblock %}
+
+{% block innerbody %}
+<div class="twocolumns">
+    <div class="left-column">
+        <div class="box">
+            <div class="holder">
+                <div class="frame">
+                    <div class="setting-block">
+                        <div class="row">
+                            <label for="location">{% trans %}Location{% endtrans %}</label>
+                            <div>
+                                <select id="select-location">
+                                    <option value="bottom">{% trans %}Bottom{% endtrans %}</option>
+                                    <option value="top">{% trans %}Top{% endtrans %}</option>
+                                    <option value="right">{% trans %}Right{% endtrans %}</option>
+                                    <option value="left">{% trans %}Left{% endtrans %}</option>
+                                </select>
+                            </div>                                        
+                        </div>
+                    </div>
+                    <div class="setting-block">
+                        <div class="row">
+                            <label for="position">{% trans %}Location{% endtrans %}</label>
+                            <label class="align-right" for="position">%</label>
+                            <div class="text-1">
+                                <input id="position" type="text" value="10" />
+                            </div>
+                        </div>
+                        <div id="slider-position" class="row-s slider-bar large"></div><br>
+                        <div class="row">
+                            <label for="width">{% trans %}Width{% endtrans %}</label>
+                            <label class="align-right" for="width">px</label>
+                            <div class="text-1">
+                                <input id="width" type="text" value="10" />
+                            </div>
+                        </div>
+                        <div id="slider-width" class="row-s slider-bar large"></div><br>
+                        <div class="row">
+                            <label for="height">{% trans %}Height{% endtrans %}</label>
+                            <label class="align-right" for="height">px</label>
+                            <div class="text-1">
+                                <input id="height" type="text" value="10" />
+                            </div>
+                        </div>
+                        <div id="slider-height" class="row-s slider-bar large"></div><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="holder">
+                <div class="frame">
+                    <div class="setting-block">
+                        <div class="row">
+                            <label for="box-width">{% trans %}Width{% endtrans %}</label>
+                            <label class="align-right" for="box-width">px</label>
+                            <div class="text-1">
+                                <input id="box-width" type="text" value="130" />
+                            </div>
+                        </div>
+                        <div id="slider-box-width" class="row-s slider-bar large"></div>
+                        <br>
+                        <div class="row">
+                            <label for="box-height">{% trans %}Height{% endtrans %}</label>
+                            <label class="align-right" for="box-height">px</label>
+                            <div class="text-1">
+                                <input id="box-height" type="text" value="50" />
+                            </div>
+                        </div>
+                        <div id="slider-box-height" class="row-s slider-bar large"></div>
+                        <br>
+                        <div class="row">
+                            <label for="box-padding">{% trans %}Padding{% endtrans %}</label>
+                            <label class="align-right" for="box-padding">px</label>
+                            <div class="text-1">
+                                <input id="box-padding" type="text" value="0" />
+                            </div>
+                        </div>
+                        <div id="slider-box-padding" class="row-s slider-bar large"></div><br>
+                        <div class="row">
+                            <label for="box-radius">{% trans %}Radius{% endtrans %}</label>
+                            <label class="align-right" for="box-radius">px</label>
+                            <div class="text-1">
+                                <input id="box-radius" type="text" value="10" />
+                            </div>
+                        </div>
+                        <div id="slider-box-radius" class="row-s slider-bar large"></div>
+                    </div>
+                    <div class="setting-block">
+                        <div class="row">
+                            <label for="box-border">{% trans %}Border{% endtrans %}</label>
+                            <label class="align-right" for="box-border">px</label>
+                            <div class="text-1">
+                                <input id="box-border" type="text" value="0" />
+                            </div>
+                        </div>
+                        <div id="slider-box-border" class="row-s slider-bar large"></div>
+                        <br>
+                        <div class="row">
+                            <label for="br-color">{% trans %}Border color{% endtrans %}</label>
+                            <div class="text-2">
+                                <input id="br-color" type="text" value="#000000" />
+                            </div>
+                            <a id="br-color-button" class="btn-color color-3" href="javascript:;">
+                                <span>color</span>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <label for="br-background-color">{% trans %}Background color{% endtrans %}</label>
+                            <div class="text-2">
+                                <input id="br-background-color" type="text" value="#e7a61a" />
+                            </div>
+                            <a id="br-background-color-button" class="btn-color color-4" href="javascript:;">
+                                <span>color</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-column">
+        <div class="box-wrap">
+            <textarea id="speech-bubble-code" class="content"></textarea>
+            <div id="speechBubbleBorder">
+                <div id="speech-bubble-panel">
+                    <div id="spikeBorder"></div> 
+                    <div id="spike"></div><div id="border-radius-object"></div>
+                </div>
+            </div>
+            <a href="javascript:;" id="copy-text-input" class="btn-link-1">{% trans %}Copy text{% endtrans %}</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div id="opacity-gradient" class="slider-bar large" style="display: none;"></div>
+{% endblock %}

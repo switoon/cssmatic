@@ -113,7 +113,31 @@ page_plugins = [
         '/img/img-04.png',
         lazy_gettext(
             u"""<p>Blur radius changes, color changes, shadow size…  Everything that you need
-            to create great drop shadows in a single place.</p>"""))
+            to create great drop shadows in a single place.</p>""")),
+    PagePlugin(
+        'text',
+        '/text-properties',
+        lazy_gettext(u'Text properties'),
+        '/img/img-05.png',
+        lazy_gettext(
+            u"""<p>You need to create some beautiful typographical work? No worries, we got you
+            covered!</p>""")),
+    PagePlugin(
+        'keyframes',
+        '/keyframes',
+        lazy_gettext(u'Keyframes'),
+        '/img/img-06.png',
+        lazy_gettext(
+            u"""<p>Need some fancy effects for your website?. Create amazing animations 
+            easily and fun.</p>""")),
+    PagePlugin(
+        'speech-bubble',
+        '/speech-bubble',
+        lazy_gettext(u'Speech bubbles'),
+        '/img/img-07.png',
+        lazy_gettext(
+            u"""<p>Create your own speech bubbles for your website. Your characters should 
+            say what they think.</p>"""))
 ]
 
 
