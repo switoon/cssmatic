@@ -39,14 +39,12 @@ TextProperties.prototype.refresh = function () {
                 ffstrokeText += i+'px '+i+'px '+this.strokeColor+', -'+i+'px -'+i+'px '+this.strokeColor+', -'+i+'px '+i+'px '+this.strokeColor+', '+i+'px -'+i+'px '+this.strokeColor+', ';           
             }
         }
-
         this.htmlElement.css('font-size', this.fontSize);
         this.htmlElement.css('color', this.fillColor);
         this.htmlElement.css('-webkit-text-stroke-width', this.strokeWidth);
         this.htmlElement.css('-webkit-text-stroke-color', this.strokeColor);
         this.htmlElement.css('-webkit-text-fill-color', this.fillColor);
         this.htmlCode.html('');
-
         var text = '<div>font-size: ' + fontSizeText +';</div>';
         text += '<div>color: ' + fillColorText +';</div>';
         if (this.strokeWidth != 0 || shadow == true){
@@ -102,7 +100,6 @@ TextProperties.prototype.refresh = function () {
         this.htmlCode.html("<div></div>");
         $('#text-properties-code > div').last().text(code);
     }
-    
 };
 
 TextProperties.prototype.fontSize = function (fontSize) {

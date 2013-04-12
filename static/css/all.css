@@ -14,7 +14,7 @@ a:hover {text-decoration:underline;}
 input,
 textarea,
 select {
-	font:12px/15px Helvetica, Arial, sans-serif;
+	font:12px/15px Helvetica, Arial, sans-serif !important;
 	vertical-align:middle;
 	color:#aaa;
 }
@@ -1329,14 +1329,15 @@ position: relative;
 width: 500px;
 }
 
-#svgButton{
+#svgButton, #kfOptionsBtn{
 padding: 10px 40px;
 background: white;
 border: 1px solid grey;
 border-radius: 4px;
 color: grey;
+font-size: 10px;
 }
-#svgButton:hover{
+#svgButton:hover, #kfOptionsBtn:hover{
 padding: 10px 40px;
 background: white;
 border: 1px solid grey;
@@ -1344,7 +1345,7 @@ border-radius: 4px;
 color: grey;
 box-shadow: -2px -2px 2px grey inset;
 }
-#svgButton:active{
+#svgButton:active, #kfOptionsBtn:active{
 background: #F1F1F1;
 padding: 10px 40px;
 border: 1px solid grey;
@@ -1389,7 +1390,7 @@ z-index: 1;
 top: 200px;
 height: 200px;
 }
-#select-location{
+#select-location, #kf-TFunction, #kf-Direction{
 float: right;
 }
 /* Keyframes */
@@ -1422,14 +1423,79 @@ float: right;
 	font-family: helvetica;
 	font-size: 40px;
 }
-#keyframes-preview div{
-	width: 80%;
-	height: 50%;
-	background: crimson;
-}
 #keyframes-preview img{
 	width: 80%;
 }
-
-
-
+.kf-textarea{
+	background: white;
+	border: 1px solid #aaa;
+	resize: none;
+	width: 100%;
+	height: 110px;
+}
+#cssCode{
+	font-family: helvetica;
+	overflow: auto;
+}
+.note {
+	clear: both;
+    color: red;
+    font-size: 10px;
+    font-style: italic;
+    margin-left: 5px;
+}
+#tabs {
+	font-size: 11px;
+}
+.botonera, .botoneraAdd{
+	float: right;
+	clear: right;
+}
+.botonera > * {
+	display: inline;
+}
+.botonera2{
+	position: relative;
+    top: -42px;
+    height: 1px;
+    width: 1px;
+    left: 2px;
+}
+.kftitle{
+	font-weight: bold;
+	font-size: 13px;
+}
+.keyframes-block > .setting-block{
+	border-bottom: 1px solid grey;
+}
+.kf-btn{
+	cursor: pointer;
+}
+.propiedades:nth-child(odd) {
+clear: both;
+height: 45px;
+background: rgb(252, 248, 237);
+}
+.propiedades:nth-child(even){
+clear: both;
+height: 45px;
+background: rgb(230, 238, 234);
+}
+.propiedades .btn-color{
+border-radius: 5px;
+border: 1px solid grey;
+}
+.propText{
+	float: left;
+}
+.controles{
+	float: right;
+	width: 100%;
+}
+.propiedadSelect{
+	left: 30px;
+    position: relative;
+}
+.propSelect{
+	float: right;
+}
