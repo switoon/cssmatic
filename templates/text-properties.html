@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block js %}
+  {{ super() }}
+    <script src='{{ "/js/textProperties.js"|static_v }}'></script>
+    <script src='{{ "/js/jquery.svg.js"|static_v }}'></script>
+    <script src='{{ "/js/jquery.svgfilter.js"|static_v }}'></script>
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="/css/jquery.svg.css">
+{% endblock %}
+
+{% block innerbody %}
+<div class="twocolumns">
+    <div class="left-column">
+        <div class="box">
+            <div class="holder">
+                <div class="frame">
+                    <div class="setting-block">
+                        <div class="row">
+                            <label for="text-value">{% trans %}Insert text{% endtrans %}</label>
+                            <div class="text-2">
+                                <input  type="text" id="text-value" placeholder="{% trans %}Insert Text{% endtrans %}" /> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="tp-background-color">{% trans %}Text Color{% endtrans %}</label>
+                            <div class="text-2">
+                                <input id="tp-background-color" type="text" value="#e7a61a" />
+                            </div>
+                            <a id="tp-background-color-button" class="btn-color color-4" href="javascript:;">
+                                <span>color</span>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <label for="font-size">{% trans %}Font size{% endtrans %}</label>
+                            <label class="align-right" for="font-size">px</label>
+                            <div class="text-1">
+                                <input id="font-size" type="text" value="60" />
+                            </div>
+                        </div>
+                        <div id="slider-font-size" class="slider-bar large"></div>                    
+                    </div>
+                    <div class="setting-block">
+                        <div class="row">
+                            <label for="tp-color">{% trans %}Stroke Color{% endtrans %}</label>
+                            <div class="text-2">
+                                <input id="tp-color" type="text" value="#000000" />
+                            </div>
+                            <a id="tp-color-button" class="btn-color color-3" href="javascript:;">
+                                <span>{% trans %}color{% endtrans %}</span>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <label for="stroke-width">{% trans %}Stroke width{% endtrans %}</label>
+                            <label class="align-right" for="all-corners">px</label>
+                            <div class="text-1">
+                                <input id="stroke-width" type="text" value="0" />
+                            </div>
+                        </div>
+                        <div id="slider-stroke-width" class="slider-bar large"></div>
+                    </div>
+                    <div class="setting-block">
+                        <div class="row" id='shadowColorRow'>
+                            <label for="tp-shadow-color">{% trans %}Text shadow color{% endtrans %}</label>
+                            <div class="text-2">
+                                <input id="tp-shadow-color" type="text" value="#000" />
+                            </div>
+                            <a id="tp-shadow-color-button" class="btn-color color-3" href="javascript:;">
+                                <span>{% trans %}Shadow color{% endtrans %}</span>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <label for="vertical-shadow">{% trans %}Vertical position{% endtrans %}</label>
+                            <label class="align-right" for="vertical-shadow">px</label>
+                            <div class="text-1">
+                                <input id="vertical-shadow" type="text" value="0" />
+                            </div>
+                        </div>
+                        <div id="slider-vertical-shadow" class="slider-bar large"></div></br>
+                        <div class="row">
+                            <label for="horizontal-shadow">{% trans %}Horizontal position{% endtrans %}</label>
+                            <label class="align-right" for="horizontal-shadow">px</label>
+                            <div class="text-1">
+                                <input id="horizontal-shadow" type="text" value="0" />
+                            </div>
+                        </div>
+                        <div id="slider-horizontal-shadow" class="slider-bar large"></div></br>
+                        <div class="row">
+                            <label for="blur-shadow">{% trans %}Blur{% endtrans %}</label>
+                            <label class="align-right" for="blur-shadow">px</label>
+                            <div class="text-1">
+                                <input id="blur-shadow" type="text" value="0" />
+                            </div>
+                        </div>
+                        <div id="slider-blur-shadow" class="slider-bar large"></div></br>
+                    </div>
+                    <div class="setting-block">
+                        <div class="row">
+                            <button id='svgButton'>SVG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-column">
+        <div class="box-wrap text">
+            <div id="text-properties-code" class="content"></div>
+
+            <div id="text-properties-panel">
+                <h1 id="textExample">Lorem Ipsum</h1>
+                <div id='svgCanvas'></div>
+                <div id="text-properties-object"><a id="copy-text-input" class="btn-link-1" href="javascript:;">{% trans %}Copy Text{% endtrans %}</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

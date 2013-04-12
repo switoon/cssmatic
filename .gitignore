@@ -2,3 +2,13 @@
 *~
 *.pyc
 application.cfg
+
+translations/es/.DS_Store
+
+translations/.DS_Store
+
+templates/.DS_Store
+
+static/js/.DS_Store
+
+.DS_Store

@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block js %}
+  {{ super() }}
+  <script src='{{ "/js/keyframes.js"|static_v }}'></script>
+{% endblock %}
+
+{% block style %}
+  <style id="kf-style">
+    #ElementDiv{
+    width: 80%;
+    height: 50%;
+    background: crimson;
+    }
+  </style>
+{% endblock %}
+
+{% block innerbody %}
+<div class="keyframes-block">
+    <div class="left-column">
+        <div id="tabs">
+          <ul>
+            <li><a href="#tab-2"><span>{% trans %}Initial properties{% endtrans %}</span></a></li>
+            <li><a href="#tab-1"><span>{% trans %}Keyframes{% endtrans %}</span></a></li>
+          </ul>
+          <div id="tab-1">
+            <div class="holder">
+            <div class="frame">
+                <div class="setting-block" id="keyframes-viewer">
+                    <div class="row">
+                        <label for="position">{% trans %}Timeline - Keyframes{% endtrans %}</label>
+                        <div class="text-1">
+                            <input id="position" type="text" value="0%"/>
+                        </div> 
+                    </div>
+                    <div id="position-markers"></div>
+                </div>
+                <div class="setting-block" >
+                <div class="row">
+                    <button id='kfOptionsBtn'>{% trans %}Hide options{% endtrans %}</button>        
+                </div>
+                <div id="kf-Options">
+                    <div class="row">
+                        <label for="animationName">{% trans %}Animation name{% endtrans %}</label>
+                        <div class="text-2">
+                            <input id="animationName" class="initial" type="text" value="" placeholder="{% trans %}Name{% endtrans %}"/>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <label for="animationDelay">{% trans %}Delay (seg.){% endtrans %}</label>
+                        <div class="text-2">
+                            <input id="animationDelay" class="initial" type="text" value="" placeholder="{% trans %}Delay{% endtrans %}"/>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <label for="animationDuration">{% trans %}Duration (seg.){% endtrans %}</label>
+                        <div class="text-2">
+                            <input id="animationDuration" class="initial" type="text" value="" placeholder="{% trans %}Duration{% endtrans %}"/>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <label for="animationIteration">{% trans %}Iteration{% endtrans %}</label>
+                        <div class="text-2">
+                            <input id="animationIteration" class="initial" type="text" value="" placeholder="{% trans %}Iteration{% endtrans %}"/>
+                        </div> 
+                        <p class="note">{% trans %}Use 0 for infinite looping{% endtrans %}</p>
+                    </div>
+                    <div class="row">
+                        <label for="kf-TFunction">{% trans %}Timing function{% endtrans %}</label>
+                            <select id="kf-TFunction">
+                                <option value="ease">Ease</option>
+                                <option value="linear">Linear</option>
+                                <option value="ease-in">Ease in</option>
+                                <option value="ease-out">Ease out</option>
+                                <option value="ease-in-out">Ease in & out</option>
+                            </select>
+                    </div>
+                    <div class="row">
+                       <label for="kf-Direction">{% trans %}Direction{% endtrans %}</label>
+                            <select id="kf-Direction">
+                                <option value="normal">Normal</option>
+                                <option value="alternate">Alternate</option>
+                            </select>
+                    </div>
+                    <div class="row" id="saveAnimation">
+                        <label for="" class="kftitle">{% trans %} Animation options {% endtrans %}</label>
+                        <div class="botonera">
+                            <div id="saveAnimation">
+                                <img class="kf-btn" src="/img/save.png" alt="{% trans %}Save animation{% endtrans %}">
+                            </div>
+                            <div id="clearAnimation">
+                                <img class="kf-btn" src="/img/clear.png" alt="{% trans %}Remove animation{% endtrans %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>            
+            
+            <div class="frame" id="kf-keyframe">
+                <div class="setting-block">
+                    <div class="row">
+                        <label for="keyframe" class="kftitle">{% trans %}Keyframe {% endtrans %}<span id="keyframe">0%</span></label>
+                    </div>
+                    <div class="row" class="propertie">
+                        <label for="" class="kftitle">{% trans %}Properties{% endtrans %}</label>
+                        <div class="botoneraAdd">
+                            <div id="add">
+                                <img onclick="addPropertie()" class="kf-btn" src="/img/add.png" alt="{% trans %}Add propertie{% endtrans %}">
+                            </div>
+                        </div>
+                        <div id="kfproperties">
+                        </div>
+                    </div>
+                </div>
+                <div class="setting-block">
+                    <div class="row" id="KeyframeOptions">
+                        <label for="" class="kftitle">{% trans %} Keyframe options {% endtrans %}</label>
+                        <div class="botonera">
+                            <div id="saveKeyframe">
+                                <img onclick="saveKF()" class="kf-btn" src="/img/save.png" alt="{% trans %}Save keyframe{% endtrans %}">
+                            </div>
+                            <div id="clearKeyframe">
+                                <img onclick="clearKF()" class="kf-btn" src="/img/clear.png" alt="{% trans %}Clear keyframe{% endtrans %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          </div>
+          <div id="tab-2">
+            <div class="setting-block">
+                <div class="row">
+                    <label for="element">{% trans %}Select element to animate{% endtrans %}</label>
+                </div>
+                <div id="radio" class="row">
+                    <input type="radio" id="text" name="element" checked="checked" value="<h3 id='animatedText'>Lorem Ipsum</h3>">
+                    <label for="text">{% trans %}Text{% endtrans %}</label>
+                    <input type="radio" id="img" name="element" value="<img id='animatedImage' src='/img/animatedImg.jpg' alt='{% trans %}Animated image{% endtrans %}'>">
+                    <label for="img">{% trans %}Image{% endtrans %}</label>
+                    <input type="radio" id="div" name="element" value="<div id='Element'></div>">
+                    <label for="div">{% trans %}Other{% endtrans %}</label>
+                </div>
+            </div>
+            <div class="holder" id="dinamicKF">
+                <div id="kf-other">
+                        <div class="row">
+                            <p class="note">{% trans %}You must use the correct syntax. If it will not work. If you are unsure, do not touch anything, we do it for you. Use an Id for the correct working of the plugin!.{% endtrans %}</p>
+                            <label for="initialHtml">{% trans %}Define html tags of the element{% endtrans %}</label>
+                        </div>
+                        <div class="row">
+                            <textarea id="initialHtml" name="initialHtml" class="kf-textarea" placeholder="{% trans %}Define the element using html tags for a best experience and more realistic preview. It's optional, but we suggest you to do it!{% endtrans %}"></textarea>
+                        </div>
+                        <div class="row">
+                            <label for="initialCss">{% trans %}Define initial css properties of the element{% endtrans %}</label>
+                        </div>
+                        <div class="row">
+                            <textarea id="initialCss" name="initialCss" class="kf-textarea" placeholder="{% trans %}If you define the initial css properties of your element, you'll see a more fidelity animation.{% endtrans %}"></textarea>
+                        </div>
+                </div>
+                <div id="kf-text">
+                    <div class="setting-block">
+                        <div class="row">
+                            <label for="kf-text">{% trans %}Animation text{% endtrans %}</label>
+                            <div class="text-2">
+                                <input class="initial" id="kf-iNNertext" name="kf-text" type="text" value="" placeholder="{% trans %}Text{% endtrans %}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="right-column">
+        <div class="preview-block">
+            <div id="keyframes-preview" class="preview-box gradient-background"></div>
+        </div>
+        <div class="box">
+            <div class="holder">
+                <div class="frame">
+                    <form action="#">
+                        <div class="block">
+                            <div class="scroll-container">
+                                <div id="css-code-content" class="holder">
+                                    <pre id="cssCode"></pre>
+                                </div>
+                            </div>
+                            <a href="javascript:;" id="copy-text-input" class="btn-link-1">Copy text</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="clear:both"></div>
+{% endblock %}
